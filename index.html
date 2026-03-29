@@ -266,6 +266,311 @@ line-height: 1.4;
 .product-card.featured .product-tag { background-color: rgba(255,255,255,0.15); color: rgba(255,255,255,0.85); }
 .product-card.standard .product-tag { background-color: #F2D5B8; color: #7A5230; }
 
+/* ===================== */
+/* SEASONAL SECTION      */
+/* ===================== */
+.seasonal {
+background-color: #FFFDF8;
+position: relative;
+overflow: hidden;
+}
+.seasonal::before {
+content: ‘’;
+position: absolute;
+top: 0; left: 0; right: 0;
+height: 4px;
+background: linear-gradient(90deg, #C8390A, #E4A85A, #7B9E4A, #C8390A);
+background-size: 200% 100%;
+animation: shimmer 4s linear infinite;
+}
+@keyframes shimmer {
+0% { background-position: 0% 0%; }
+100% { background-position: 200% 0%; }
+}
+.seasonal-header { text-align: center; margin-bottom: 1.5rem; }
+.seasonal-header .section-label { color: #C8390A; }
+.seasonal-header .section-label::before,
+.seasonal-header .section-label::after { background-color: #C8390A; }
+.seasonal-header .section-title { color: #5C3A1E; }
+.seasonal-header-desc {
+text-align: center;
+color: #7A5A3A;
+font-size: 0.92rem;
+line-height: 1.9;
+max-width: 520px;
+margin: 0 auto 3.5rem;
+}
+
+/* Season tabs */
+.season-tabs {
+display: flex;
+justify-content: center;
+gap: 0.8rem;
+margin-bottom: 3rem;
+flex-wrap: wrap;
+}
+.season-tab {
+display: flex;
+align-items: center;
+gap: 0.4rem;
+padding: 0.55rem 1.4rem;
+border-radius: 3rem;
+border: 1.5px solid #E8C49A;
+background: transparent;
+color: #7A5A3A;
+font-family: ‘Noto Serif TC’, serif;
+font-size: 0.82rem;
+letter-spacing: 0.08em;
+cursor: pointer;
+transition: all 0.3s;
+}
+.season-tab:hover { border-color: #C8390A; color: #C8390A; }
+.season-tab.active-lunar { background-color: #C8390A; border-color: #C8390A; color: #fff; }
+.season-tab.active-spring { background-color: #7B9E4A; border-color: #7B9E4A; color: #fff; }
+
+/* Season panels */
+.season-panel { display: none; }
+.season-panel.active { display: block; }
+
+/* Lunar New Year */
+.lunar-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 2rem;
+}
+/* Main big card */
+.seasonal-card {
+border-radius: 2rem;
+overflow: hidden;
+border: 1px solid #E8C49A;
+transition: transform 0.3s, box-shadow 0.3s;
+}
+.seasonal-card:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(92,58,30,0.15); }
+
+/* Red festive card */
+.seasonal-card.festive {
+background-color: #8B1A0E;
+}
+.seasonal-card.festive .seasonal-visual {
+background: linear-gradient(135deg, #6B1208 0%, #A82010 50%, #6B1208 100%);
+height: 200px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 5rem;
+position: relative;
+overflow: hidden;
+}
+.seasonal-card.festive .seasonal-visual::before {
+content: ‘✦’;
+position: absolute;
+top: 10px; right: 16px;
+font-size: 1.2rem;
+color: rgba(255,220,150,0.4);
+}
+.seasonal-card.festive .seasonal-visual::after {
+content: ‘✦’;
+position: absolute;
+bottom: 14px; left: 18px;
+font-size: 0.9rem;
+color: rgba(255,220,150,0.3);
+}
+.seasonal-card.festive .seasonal-body { padding: 2rem; }
+.seasonal-card.festive .seasonal-badge {
+display: inline-block;
+background-color: rgba(255,220,150,0.25);
+color: #FFD97A;
+font-size: 0.68rem;
+letter-spacing: 0.15em;
+padding: 0.3rem 0.8rem;
+border-radius: 2rem;
+margin-bottom: 0.8rem;
+}
+.seasonal-card.festive h3 {
+font-family: ‘Zen Antique’, serif;
+font-size: 1.4rem;
+color: #fff;
+margin-bottom: 0.8rem;
+line-height: 1.4;
+}
+.seasonal-card.festive p {
+font-size: 0.88rem;
+line-height: 1.9;
+color: rgba(255,255,255,0.72);
+margin-bottom: 1.5rem;
+}
+.seasonal-card.festive .product-tags .product-tag {
+background-color: rgba(255,220,150,0.18);
+color: rgba(255,220,150,0.9);
+}
+
+/* right column stacked cards */
+.lunar-stack {
+display: flex;
+flex-direction: column;
+gap: 2rem;
+}
+/* Light parchment sub-cards */
+.seasonal-card.parchment {
+background-color: #FDF6EC;
+}
+.seasonal-card.parchment .seasonal-visual-sm {
+height: 110px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 3.2rem;
+background-color: #F2D5B8;
+}
+.seasonal-card.parchment .seasonal-body { padding: 1.5rem 1.8rem; }
+.seasonal-card.parchment .seasonal-badge {
+display: inline-block;
+background-color: #F2D5B8;
+color: #9A5F20;
+font-size: 0.68rem;
+letter-spacing: 0.15em;
+padding: 0.3rem 0.8rem;
+border-radius: 2rem;
+margin-bottom: 0.6rem;
+}
+.seasonal-card.parchment h3 {
+font-family: ‘Zen Antique’, serif;
+font-size: 1.2rem;
+color: #5C3A1E;
+margin-bottom: 0.5rem;
+line-height: 1.4;
+}
+.seasonal-card.parchment p {
+font-size: 0.83rem;
+line-height: 1.85;
+color: #7A5A3A;
+margin-bottom: 1rem;
+}
+.seasonal-card.parchment .product-tags .product-tag {
+background-color: #F2D5B8;
+color: #7A5230;
+}
+
+/* Qingming / spring panel */
+.spring-card-wrap {
+display: grid;
+grid-template-columns: 1.1fr 0.9fr;
+gap: 2rem;
+align-items: start;
+}
+.seasonal-card.green {
+background-color: #3A5A2A;
+}
+.seasonal-card.green .seasonal-visual {
+background: linear-gradient(135deg, #2D4820 0%, #4E7A36 50%, #2D4820 100%);
+height: 220px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 5rem;
+position: relative;
+}
+.seasonal-card.green .seasonal-visual::before {
+content: ‘🌿’;
+position: absolute;
+top: 14px; right: 18px;
+font-size: 1.4rem;
+opacity: 0.4;
+}
+.seasonal-card.green .seasonal-body { padding: 2rem; }
+.seasonal-card.green .seasonal-badge {
+display: inline-block;
+background-color: rgba(180,220,130,0.22);
+color: #B4DC82;
+font-size: 0.68rem;
+letter-spacing: 0.15em;
+padding: 0.3rem 0.8rem;
+border-radius: 2rem;
+margin-bottom: 0.8rem;
+}
+.seasonal-card.green h3 {
+font-family: ‘Zen Antique’, serif;
+font-size: 1.4rem;
+color: #fff;
+margin-bottom: 0.8rem;
+line-height: 1.4;
+}
+.seasonal-card.green p {
+font-size: 0.88rem;
+line-height: 1.9;
+color: rgba(255,255,255,0.72);
+margin-bottom: 1.5rem;
+}
+.seasonal-card.green .product-tags .product-tag {
+background-color: rgba(180,220,130,0.18);
+color: rgba(180,220,130,0.9);
+}
+
+/* Origin story card for spring */
+.origin-card {
+background: linear-gradient(160deg, #F5F0E8 0%, #EDE5D5 100%);
+border: 1px solid #D4C4A0;
+border-radius: 2rem;
+padding: 2rem;
+position: relative;
+overflow: hidden;
+}
+.origin-card::before {
+content: ‘🌳’;
+position: absolute;
+bottom: -10px; right: -10px;
+font-size: 6rem;
+opacity: 0.08;
+}
+.origin-card-label {
+font-size: 0.68rem;
+letter-spacing: 0.2em;
+color: #7B9E4A;
+text-transform: uppercase;
+margin-bottom: 1rem;
+}
+.origin-card h4 {
+font-family: ‘Zen Antique’, serif;
+font-size: 1.15rem;
+color: #3A5A2A;
+margin-bottom: 1rem;
+line-height: 1.5;
+}
+.origin-card p {
+font-size: 0.83rem;
+line-height: 2;
+color: #5A4A30;
+margin-bottom: 1.2rem;
+}
+.origin-divider {
+width: 2rem;
+height: 1px;
+background-color: #7B9E4A;
+opacity: 0.5;
+margin: 1.2rem 0;
+}
+.origin-detail {
+font-size: 0.78rem;
+color: #7B9E4A;
+line-height: 1.85;
+letter-spacing: 0.03em;
+}
+
+/* Seasonal notice strip */
+.seasonal-strip {
+margin-top: 3rem;
+background: linear-gradient(135deg, #FDF0E0, #F5E0C5);
+border: 1px solid #E8C49A;
+border-radius: 1.2rem;
+padding: 1.5rem 2rem;
+display: flex;
+align-items: flex-start;
+gap: 1rem;
+}
+.seasonal-strip-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 0.1rem; }
+.seasonal-strip p { font-size: 0.83rem; line-height: 1.9; color: #7A5A3A; }
+.seasonal-strip strong { color: #5C3A1E; }
+
 /* PROCESS */
 .process { background-color: #5C3A1E; }
 .process-header { text-align: center; margin-bottom: 4rem; }
@@ -393,6 +698,8 @@ nav { padding: 1rem 1.5rem; }
 section { padding: 4rem 1.5rem; }
 .products-grid { grid-template-columns: 1fr; }
 .process-steps { grid-template-columns: 1fr 1fr; }
+.lunar-grid { grid-template-columns: 1fr; }
+.spring-card-wrap { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
 nav { flex-direction: column; gap: 0.8rem; }
@@ -409,6 +716,7 @@ nav { flex-direction: column; gap: 0.8rem; }
   <div class="nav-logo">平凡家</div>
   <ul class="nav-links">
     <li><a href="#products">服務項目</a></li>
+    <li><a href="#seasonal">季節限定</a></li>
     <li><a href="#process">訂購流程</a></li>
     <li><a href="#notice">注意事項</a></li>
     <li><a href="#contact">聯絡我</a></li>
@@ -421,7 +729,7 @@ nav { flex-direction: column; gap: 0.8rem; }
   <div class="hero-bg"></div>
   <div class="hero-content">
     <div class="hero-tag">✦ 手工花生糖．似顏繪客製 ✦</div>
-    <h1>平凡家花生糖</h1>
+    <h1>平凡家</h1>
     <div class="hero-sub">每一顆，都藏著你們的故事</div>
     <p class="hero-desc">
       手工炒製的花生糖，搭配親筆繪製的新人似顏繪<br>
@@ -455,7 +763,7 @@ nav { flex-direction: column; gap: 0.8rem; }
       </div>
       <div class="feature-card reveal reveal-delay-2">
         <span class="feature-icon">🍯</span>
-        <h3>純手工炒製</h3>
+        <h3>純手工熬製</h3>
         <p>嚴選台灣花生，以傳統工法、獨家配方細心炒製，口感酥脆不黏牙，每批小量製作確保品質</p>
       </div>
       <div class="feature-card reveal reveal-delay-3">
@@ -510,6 +818,125 @@ nav { flex-direction: column; gap: 0.8rem; }
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- SEASONAL LIMITED -->
+
+<section class="seasonal" id="seasonal">
+  <div class="section-inner">
+    <div class="seasonal-header reveal">
+      <div class="section-label" style="color:#C8390A">季節限定</div>
+      <h2 class="section-title">隨節氣而來的驚喜</h2>
+    </div>
+    <p class="seasonal-header-desc reveal">
+      跟著台灣的歲時節氣，推出限量季節商品<br>
+      每一款都只在特定時節短暫出現，錯過要等明年 🍃
+    </p>
+
+```
+<!-- Tabs -->
+<div class="season-tabs reveal">
+  <button class="season-tab active-lunar" onclick="switchSeason('lunar', this)">🧧 年節系列</button>
+  <button class="season-tab" onclick="switchSeason('spring', this)">🌿 清明系列</button>
+</div>
+
+<!-- LUNAR NEW YEAR PANEL -->
+<div id="panel-lunar" class="season-panel active">
+  <div class="lunar-grid">
+    <!-- Left: big featured card -->
+    <div class="seasonal-card festive reveal reveal-delay-1">
+      <div class="seasonal-visual">🧧</div>
+      <div class="seasonal-body">
+        <span class="seasonal-badge">✦ 年節主打</span>
+        <h3>年節禮盒<br>花生糖 × 似顏繪</h3>
+        <p>過年送禮的最佳選擇。手工花生糖搭配客製年節包裝，加上親筆繪製的家人或長輩似顏繪，送出滿滿的年節心意。</p>
+        <div class="product-tags">
+          <span class="product-tag">🎁 禮盒包裝</span>
+          <span class="product-tag">🎨 客製似顏繪</span>
+          <span class="product-tag">📦 數量洽詢</span>
+          <span class="product-tag">📅 農曆年前截止</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: two stacked sub-cards -->
+    <div class="lunar-stack">
+      <div class="seasonal-card parchment reveal reveal-delay-2">
+        <div class="seasonal-visual-sm">🖌️</div>
+        <div class="seasonal-body">
+          <span class="seasonal-badge">限定加購</span>
+          <h3>獨家手寫春聯</h3>
+          <p>親筆書寫的傳統春聯，可客製內文，為新年增添一筆獨特的文化溫度。搭配禮盒加購，讓年節感加倍。</p>
+          <div class="product-tags">
+            <span class="product-tag">✒️ 親筆手寫</span>
+            <span class="product-tag">📝 可客製文字</span>
+          </div>
+        </div>
+      </div>
+      <div class="seasonal-card parchment reveal reveal-delay-3">
+        <div class="seasonal-visual-sm">🧨</div>
+        <div class="seasonal-body">
+          <span class="seasonal-badge">限定加購</span>
+          <h3>客製紅包袋</h3>
+          <p>設計印製的專屬紅包袋，可加入似顏繪元素或文字客製，讓壓歲錢也成為一份珍藏的紀念。</p>
+          <div class="product-tags">
+            <span class="product-tag">🎨 客製設計</span>
+            <span class="product-tag">🖨️ 印製精裝</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="seasonal-strip reveal">
+    <div class="seasonal-strip-icon">📅</div>
+    <p>年節系列為<strong>限量接單</strong>，通常於農曆年前 <strong>6–8 週</strong> 開放預購，額滿即止。建議提早私訊詢問開單時間，以免向隅。</p>
+  </div>
+</div>
+
+<!-- QINGMING / SPRING PANEL -->
+<div id="panel-spring" class="season-panel">
+  <div class="spring-card-wrap">
+    <!-- Left: main green card -->
+    <div class="seasonal-card green reveal reveal-delay-1">
+      <div class="seasonal-visual">🍑</div>
+      <div class="seasonal-body">
+        <span class="seasonal-badge">✦ 清明限定</span>
+        <h3>仁愛鄉眉原部落<br>手工脆梅</h3>
+        <p>來自南投仁愛鄉眉原部落的老梅樹，每年清明時節手工採摘、現製脆梅。梅子酸甜清爽，帶著山林的野性氣息，一年只有一次。</p>
+        <div class="product-tags">
+          <span class="product-tag">🌳 自家老梅樹</span>
+          <span class="product-tag">🏔️ 眉原部落原產</span>
+          <span class="product-tag">🤲 純手工製作</span>
+          <span class="product-tag">📅 清明限量</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: origin story card -->
+    <div class="origin-card reveal reveal-delay-2">
+      <div class="origin-card-label">🌳 產地故事</div>
+      <h4>南投仁愛鄉<br>眉原部落的老梅樹</h4>
+      <p>這棵梅樹已陪伴家人走過數十個年頭。每年清明前後，梅子熟透，全家齊手採摘，以傳統方式醃製成脆梅。</p>
+      <div class="origin-divider"></div>
+      <p>不施農藥、不加防腐劑，只有山泉水、鹽與時間。每一顆脆梅，都帶著部落的土地記憶。</p>
+      <div class="origin-divider"></div>
+      <div class="origin-detail">
+        📍 南投縣仁愛鄉眉原部落<br>
+        🌿 自家老梅樹 · 純手工醃製<br>
+        ⏳ 每年清明時節限量出品
+      </div>
+    </div>
+  </div>
+
+  <div class="seasonal-strip reveal" style="border-color:#B4DC82; background: linear-gradient(135deg, #F0F5E8, #E5EDD5);">
+    <div class="seasonal-strip-icon">🌿</div>
+    <p style="color:#3A5A2A">脆梅每年產量依天候而定，<strong style="color:#2D4820">採完即售完</strong>，不補貨。想購入請於清明前提早私訊預約，確認當年開單時間。</p>
+  </div>
+</div>
+```
+
   </div>
 </section>
 
@@ -663,6 +1090,7 @@ nav { flex-direction: column; gap: 0.8rem; }
 </footer>
 
 <script>
+  // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -673,6 +1101,26 @@ nav { flex-direction: column; gap: 0.8rem; }
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   reveals.forEach(el => observer.observe(el));
+
+  // Season tab switcher
+  function switchSeason(season, btn) {
+    // Hide all panels
+    document.querySelectorAll('.season-panel').forEach(p => p.classList.remove('active'));
+    // Show selected
+    document.getElementById('panel-' + season).classList.add('active');
+    // Update tab styles
+    document.querySelectorAll('.season-tab').forEach(t => {
+      t.classList.remove('active-lunar', 'active-spring');
+    });
+    btn.classList.add('active-' + season);
+
+    // Re-trigger reveal animations inside newly shown panel
+    const newReveals = document.querySelectorAll('#panel-' + season + ' .reveal');
+    newReveals.forEach(el => {
+      el.classList.remove('visible');
+      setTimeout(() => el.classList.add('visible'), 80);
+    });
+  }
 </script>
 
 </body>
